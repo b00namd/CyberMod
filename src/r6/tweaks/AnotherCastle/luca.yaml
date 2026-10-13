@@ -1,0 +1,6 @@
+# Luca Rossi: eigener NPC-Eintrag, Verhalten vom Japantown-Arbeiter, Aussehen aus AnotherCastle.archive
+# (luca.ent / luca.app werden mit build.ps1 aus assets\ gebaut)
+Character.ac_luca_rossi:
+  $base: Character.jpn_02_worker
+  entityTemplatePath: mod\anothercastle\characters\luca.ent
+  appearanceName: ac_luca
