@@ -5,7 +5,7 @@ local util = require("modules/util")
 local FILE = "positions.txt"
 
 local DEFAULTS = {
-    -- luca    = { x = 0, y = 0, z = 0, yaw = 0 },
+    luca    = { x = 347.640, y = -1878.437, z = -6.533, yaw = 154.62 },
     -- castle1 = { x = 0, y = 0, z = 0, yaw = 0 },
 }
 
