@@ -3,12 +3,23 @@ local util = require("modules/util")
 local positions = require("modules/positions")
 local world = require("modules/world")
 local dialog = require("modules/dialog")
+local phone = require("modules/phone")
 
 local FACT = "ac_stage"
 local STAGE = { NONE = 0, MEET_LUCA = 1, CASTLE1 = 2 }
 local TALK_RADIUS = 2.5
 local DESPAWN_DISTANCE = 60
 local AUTOSTART_DELAY = 15
+
+-- SMS-Unterhaltung (Texte in texts/phone.json)
+local SMS = phone.conversation("ac_luca_rossi", "ch1")
+local SMS_MESSAGES = { "ch1_01", "ch1_02", "ch1_03" }
+local SMS_REPLY_GROUP = "ch1_reply"
+local SMS_REPLIES = { "ch1_reply_a", "ch1_reply_b" }
+local SMS_ANSWERS = { ch1_reply_a = "ch1_reply_a_answer", ch1_reply_b = "ch1_reply_b_answer" }
+local SMS_DELAY = 4            -- Sekunden zwischen Lucas Nachrichten
+local FACT_SMS_REPLIED = "ac_ch1_sms_replied"
+local REPLY_CHECK_INTERVAL = 1
 
 local chapter1 = {
     STAGE = STAGE,
@@ -17,7 +28,8 @@ local chapter1 = {
     lucaRecord = "Character.ac_luca_rossi",
     lucaAppearance = "ac_luca",
     read = {},    -- bereits gewählte Dialogoptionen
-    busy = false  -- Luca spricht gerade
+    busy = false, -- Luca spricht gerade
+    replyCheck = 0
 }
 
 function chapter1.getStage()
@@ -67,10 +79,36 @@ function chapter1.start()
     setStage(STAGE.MEET_LUCA)
     chapter1.read = {}
 
-    util.sayLines("AC-Name-Luca", { "AC-Ch1-Sms-1", "AC-Ch1-Sms-2", "AC-Ch1-Sms-3" }, function()
+    SMS.open()
+    for i, messageId in ipairs(SMS_MESSAGES) do
+        util.after((i - 1) * SMS_DELAY, function() SMS.send(messageId) end)
+    end
+    util.after(#SMS_MESSAGES * SMS_DELAY, function()
+        SMS.offerChoices(SMS_REPLY_GROUP, SMS_REPLIES)
         chapter1.setupStage()
         util.notify(util.text("AC-Ch1-Objective-Meet"), 5)
     end)
+end
+
+-- Nach dem Laden: Lucas SMS vollständig im Handy, falls das Laden mitten in die Nachrichten gefallen ist
+local function restoreSms()
+    if chapter1.getStage() == STAGE.NONE or util.getFact(FACT_SMS_REPLIED) ~= 0 then return end
+    SMS.open()
+    for _, messageId in ipairs(SMS_MESSAGES) do
+        SMS.send(messageId, false)
+    end
+    SMS.offerChoices(SMS_REPLY_GROUP, SMS_REPLIES)
+end
+
+-- Hat der Spieler im Handy geantwortet? Dann antwortet Luca passend.
+local function checkSmsReply()
+    if chapter1.getStage() == STAGE.NONE or util.getFact(FACT_SMS_REPLIED) ~= 0 then return end
+    local chosen = SMS.chosen(SMS_REPLY_GROUP, SMS_REPLIES)
+    if chosen then
+        util.setFact(FACT_SMS_REPLIED, 1)
+        util.log("SMS-Antwort: " .. chosen)
+        util.after(SMS_DELAY, function() SMS.send(SMS_ANSWERS[chosen]) end)
+    end
 end
 
 local function accept()
@@ -116,13 +154,20 @@ function chapter1.onSessionStart()
     chapter1.read = {}
     chapter1.busy = false
     chapter1.setupStage()
+    restoreSms()
 
     if chapter1.autoStart and chapter1.getStage() == STAGE.NONE then
         util.after(AUTOSTART_DELAY, chapter1.start)
     end
 end
 
-function chapter1.update()
+function chapter1.update(dt)
+    chapter1.replyCheck = chapter1.replyCheck + dt
+    if chapter1.replyCheck >= REPLY_CHECK_INTERVAL then
+        chapter1.replyCheck = 0
+        checkSmsReply()
+    end
+
     local stage = chapter1.getStage()
     local p = positions.get("luca")
     if not p or not world.npcs.luca then return end
@@ -148,6 +193,11 @@ function chapter1.reset()
     dialog.hide()
     util.clearTimers()
     world.clear()
+    local messages = {}
+    for _, messageId in ipairs(SMS_MESSAGES) do table.insert(messages, messageId) end
+    for _, answerId in pairs(SMS_ANSWERS) do table.insert(messages, answerId) end
+    SMS.reset(messages, SMS_REPLY_GROUP, SMS_REPLIES)
+    util.setFact(FACT_SMS_REPLIED, 0)
     setStage(STAGE.NONE)
     chapter1.read = {}
     chapter1.busy = false

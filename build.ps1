@@ -22,6 +22,15 @@ function Invoke-WolvenKit {
     if ($LASTEXITCODE -ne 0) { throw "WolvenKit fehlgeschlagen: $args" }
 }
 
+# Handy-Kontakte/SMS aus texts\phone.json erzeugen (Vorlage: Original-Journal, einmalig mit WolvenKit entpackt)
+$GameJournal = Join-Path $Tools "journal-json\cooked_journal.journal.json"
+if (Test-Path $GameJournal) {
+    node --max-old-space-size=4096 (Join-Path $PSScriptRoot "tools\make-journal.js") $GameJournal (Join-Path $PSScriptRoot "texts\phone.json") $Assets
+    if ($LASTEXITCODE -ne 0) { throw "make-journal.js fehlgeschlagen" }
+} else {
+    Write-Warning "Original-Journal nicht gefunden ($GameJournal), Journal wird nicht neu erzeugt."
+}
+
 # JSON -> CR2W, mit Ordnerstruktur wie im Spiel
 if (Test-Path $Staging) { Remove-Item $Staging -Recurse -Force }
 foreach ($json in Get-ChildItem $Assets -Recurse -Filter *.json) {

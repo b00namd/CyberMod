@@ -26,10 +26,7 @@ public class English extends ModLocalizationPackage {
         this.Text("AC-Name-Kinoko", "Kinoko");
         this.Text("AC-Hint-ToBeContinued", "To be continued...");
 
-        // Kapitel 1 – Rohrbruch: SMS
-        this.Text("AC-Ch1-Sms-1", "Hey, is this V? Got your number from a friend in Japantown.");
-        this.Text("AC-Ch1-Sms-2", "I'm just a plumber, but I saw something I shouldn't have. They took the princess.");
-        this.Text("AC-Ch1-Sms-3", "Please come by. I'm sending you the location. And... come alone.");
+        // Kapitel 1 – Rohrbruch (die SMS stehen in texts/phone.json)
         this.Text("AC-Ch1-Objective-Meet", "New objective: Meet Luca Rossi");
 
         // Kapitel 1: Gespräch mit Luca
@@ -59,10 +56,7 @@ public class German extends ModLocalizationPackage {
         this.Text("AC-Name-Kinoko", "Kinoko");
         this.Text("AC-Hint-ToBeContinued", "Fortsetzung folgt ...");
 
-        // Kapitel 1 – Rohrbruch: SMS
-        this.Text("AC-Ch1-Sms-1", "Hey, bist du V? Hab deine Nummer von einem Freund aus Japantown.");
-        this.Text("AC-Ch1-Sms-2", "Ich bin nur Klempner, aber ich hab was gesehen, das ich nicht hätte sehen sollen. Sie haben die Prinzessin mitgenommen.");
-        this.Text("AC-Ch1-Sms-3", "Bitte komm vorbei. Ich schick dir den Treffpunkt. Und ... komm allein.");
+        // Kapitel 1 – Rohrbruch (die SMS stehen in texts/phone.json)
         this.Text("AC-Ch1-Objective-Meet", "Neues Ziel: Triff Luca Rossi");
 
         // Kapitel 1: Gespräch mit Luca

@@ -27,7 +27,8 @@ $ModDirs = @(
 
 # Einzelne Dateien des Mods im Spielverzeichnis
 $ModFiles = @(
-    "archive\pc\mod\$ModName.archive"
+    "archive\pc\mod\$ModName.archive",
+    "archive\pc\mod\$ModName.archive.xl"
 )
 
 # Dateien, die im Spiel entstehen und beim Deploy erhalten bleiben (im Spiel festgelegte Orte, Logs, CET-Datenbank)

@@ -1,0 +1,89 @@
+{
+  "Header": {
+    "WolvenKitVersion": "9.1.0",
+    "WKitJsonVersion": "0.0.9",
+    "GameVersion": 2310,
+    "DataType": "CR2W",
+    "ArchiveFileName": "mod\\anothercastle\\localization\\en-us.json"
+  },
+  "Data": {
+    "Version": 195,
+    "BuildVersion": 0,
+    "RootChunk": {
+      "$type": "JsonResource",
+      "cookingPlatform": "PLATFORM_PC",
+      "root": {
+        "HandleId": "0",
+        "Data": {
+          "$type": "localizationPersistenceOnScreenEntries",
+          "entries": [
+            {
+              "$type": "localizationPersistenceOnScreenEntry",
+              "femaleVariant": "Hey, is this V? Got your number from a friend in Japantown.",
+              "maleVariant": "",
+              "primaryKey": "7770000",
+              "secondaryKey": "AC-Phone-ac_luca_rossi-ch1_01"
+            },
+            {
+              "$type": "localizationPersistenceOnScreenEntry",
+              "femaleVariant": "I'm just a plumber, but I saw something I shouldn't have. They took the princess.",
+              "maleVariant": "",
+              "primaryKey": "7770001",
+              "secondaryKey": "AC-Phone-ac_luca_rossi-ch1_02"
+            },
+            {
+              "$type": "localizationPersistenceOnScreenEntry",
+              "femaleVariant": "Please come by. I'm sending you the location. And... come alone.",
+              "maleVariant": "",
+              "primaryKey": "7770002",
+              "secondaryKey": "AC-Phone-ac_luca_rossi-ch1_03"
+            },
+            {
+              "$type": "localizationPersistenceOnScreenEntry",
+              "femaleVariant": "On my way.",
+              "maleVariant": "",
+              "primaryKey": "7770003",
+              "secondaryKey": "AC-Phone-ac_luca_rossi-ch1_reply_a"
+            },
+            {
+              "$type": "localizationPersistenceOnScreenEntry",
+              "femaleVariant": "What's in it for me?",
+              "maleVariant": "",
+              "primaryKey": "7770004",
+              "secondaryKey": "AC-Phone-ac_luca_rossi-ch1_reply_b"
+            },
+            {
+              "$type": "localizationPersistenceOnScreenEntry",
+              "femaleVariant": "Thanks, V. I'll be waiting at the spot.",
+              "maleVariant": "",
+              "primaryKey": "7770005",
+              "secondaryKey": "AC-Phone-ac_luca_rossi-ch1_reply_a_answer"
+            },
+            {
+              "$type": "localizationPersistenceOnScreenEntry",
+              "femaleVariant": "The Hayashis are filthy rich. Trust me, they'll pay.",
+              "maleVariant": "",
+              "primaryKey": "7770006",
+              "secondaryKey": "AC-Phone-ac_luca_rossi-ch1_reply_b_answer"
+            },
+            {
+              "$type": "localizationPersistenceOnScreenEntry",
+              "femaleVariant": "Burst Pipe",
+              "maleVariant": "",
+              "primaryKey": "7770007",
+              "secondaryKey": "AC-Phone-ac_luca_rossi-ch1_title"
+            },
+            {
+              "$type": "localizationPersistenceOnScreenEntry",
+              "femaleVariant": "Luca Rossi",
+              "maleVariant": "",
+              "primaryKey": "7770008",
+              "secondaryKey": "AC-Phone-ac_luca_rossi-name"
+            }
+          ]
+        }
+      }
+    },
+    "EmbeddedFiles": []
+  }
+}

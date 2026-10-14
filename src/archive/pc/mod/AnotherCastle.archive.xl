@@ -1,0 +1,8 @@
+# ArchiveXL: Handy-Kontakte/SMS (Journal) und deren Texte ins Spiel einbinden.
+# Beides wird mit tools/make-journal.js aus texts/phone.json erzeugt und mit build.ps1 ins Archiv gepackt.
+localization:
+  onscreens:
+    en-us: mod\anothercastle\localization\en-us.json
+    de-de: mod\anothercastle\localization\de-de.json
+journal:
+  - mod\anothercastle\journal\anothercastle.journal

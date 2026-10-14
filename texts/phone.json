@@ -1,0 +1,36 @@
+{
+  "_info": "Handy-Kontakte und SMS. tools/make-journal.js erzeugt daraus das Journal und die Sprachdateien (onscreens). Text-Schlüssel: AC-Phone-<kontakt>-<id>",
+  "contacts": {
+    "ac_luca_rossi": {
+      "avatar": "PhoneAvatars.Avatar_Unknown",
+      "name": { "de": "Luca Rossi", "en": "Luca Rossi" },
+      "conversations": {
+        "ch1": {
+          "title": { "de": "Rohrbruch", "en": "Burst Pipe" },
+          "items": [
+            { "type": "message", "id": "ch1_01",
+              "de": "Hey, bist du V? Hab deine Nummer von einem Freund aus Japantown.",
+              "en": "Hey, is this V? Got your number from a friend in Japantown." },
+            { "type": "message", "id": "ch1_02",
+              "de": "Ich bin nur Klempner, aber ich hab was gesehen, das ich nicht hätte sehen sollen. Sie haben die Prinzessin mitgenommen.",
+              "en": "I'm just a plumber, but I saw something I shouldn't have. They took the princess." },
+            { "type": "message", "id": "ch1_03",
+              "de": "Bitte komm vorbei. Ich schick dir den Treffpunkt. Und ... komm allein.",
+              "en": "Please come by. I'm sending you the location. And... come alone." },
+            { "type": "choices", "id": "ch1_reply",
+              "options": [
+                { "id": "ch1_reply_a", "de": "Bin schon unterwegs.", "en": "On my way." },
+                { "id": "ch1_reply_b", "de": "Was springt für mich dabei raus?", "en": "What's in it for me?" }
+              ] },
+            { "type": "message", "id": "ch1_reply_a_answer",
+              "de": "Danke, V. Ich warte am Treffpunkt.",
+              "en": "Thanks, V. I'll be waiting at the spot." },
+            { "type": "message", "id": "ch1_reply_b_answer",
+              "de": "Die Hayashis sind stinkreich. Glaub mir, die zahlen gut.",
+              "en": "The Hayashis are filthy rich. Trust me, they'll pay." }
+          ]
+        }
+      }
+    }
+  }
+}

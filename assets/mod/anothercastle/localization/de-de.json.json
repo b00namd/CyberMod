@@ -1,0 +1,89 @@
+{
+  "Header": {
+    "WolvenKitVersion": "9.1.0",
+    "WKitJsonVersion": "0.0.9",
+    "GameVersion": 2310,
+    "DataType": "CR2W",
+    "ArchiveFileName": "mod\\anothercastle\\localization\\de-de.json"
+  },
+  "Data": {
+    "Version": 195,
+    "BuildVersion": 0,
+    "RootChunk": {
+      "$type": "JsonResource",
+      "cookingPlatform": "PLATFORM_PC",
+      "root": {
+        "HandleId": "0",
+        "Data": {
+          "$type": "localizationPersistenceOnScreenEntries",
+          "entries": [
+            {
+              "$type": "localizationPersistenceOnScreenEntry",
+              "femaleVariant": "Hey, bist du V? Hab deine Nummer von einem Freund aus Japantown.",
+              "maleVariant": "",
+              "primaryKey": "7770000",
+              "secondaryKey": "AC-Phone-ac_luca_rossi-ch1_01"
+            },
+            {
+              "$type": "localizationPersistenceOnScreenEntry",
+              "femaleVariant": "Ich bin nur Klempner, aber ich hab was gesehen, das ich nicht hätte sehen sollen. Sie haben die Prinzessin mitgenommen.",
+              "maleVariant": "",
+              "primaryKey": "7770001",
+              "secondaryKey": "AC-Phone-ac_luca_rossi-ch1_02"
+            },
+            {
+              "$type": "localizationPersistenceOnScreenEntry",
+              "femaleVariant": "Bitte komm vorbei. Ich schick dir den Treffpunkt. Und ... komm allein.",
+              "maleVariant": "",
+              "primaryKey": "7770002",
+              "secondaryKey": "AC-Phone-ac_luca_rossi-ch1_03"
+            },
+            {
+              "$type": "localizationPersistenceOnScreenEntry",
+              "femaleVariant": "Bin schon unterwegs.",
+              "maleVariant": "",
+              "primaryKey": "7770003",
+              "secondaryKey": "AC-Phone-ac_luca_rossi-ch1_reply_a"
+            },
+            {
+              "$type": "localizationPersistenceOnScreenEntry",
+              "femaleVariant": "Was springt für mich dabei raus?",
+              "maleVariant": "",
+              "primaryKey": "7770004",
+              "secondaryKey": "AC-Phone-ac_luca_rossi-ch1_reply_b"
+            },
+            {
+              "$type": "localizationPersistenceOnScreenEntry",
+              "femaleVariant": "Danke, V. Ich warte am Treffpunkt.",
+              "maleVariant": "",
+              "primaryKey": "7770005",
+              "secondaryKey": "AC-Phone-ac_luca_rossi-ch1_reply_a_answer"
+            },
+            {
+              "$type": "localizationPersistenceOnScreenEntry",
+              "femaleVariant": "Die Hayashis sind stinkreich. Glaub mir, die zahlen gut.",
+              "maleVariant": "",
+              "primaryKey": "7770006",
+              "secondaryKey": "AC-Phone-ac_luca_rossi-ch1_reply_b_answer"
+            },
+            {
+              "$type": "localizationPersistenceOnScreenEntry",
+              "femaleVariant": "Rohrbruch",
+              "maleVariant": "",
+              "primaryKey": "7770007",
+              "secondaryKey": "AC-Phone-ac_luca_rossi-ch1_title"
+            },
+            {
+              "$type": "localizationPersistenceOnScreenEntry",
+              "femaleVariant": "Luca Rossi",
+              "maleVariant": "",
+              "primaryKey": "7770008",
+              "secondaryKey": "AC-Phone-ac_luca_rossi-name"
+            }
+          ]
+        }
+      }
+    },
+    "EmbeddedFiles": []
+  }
+}

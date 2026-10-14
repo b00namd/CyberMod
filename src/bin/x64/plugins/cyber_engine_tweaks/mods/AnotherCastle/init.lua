@@ -77,7 +77,7 @@ registerForEvent("onUpdate", function(dt)
 
         util.updateTimers(dt)
         dialog.update(dt)
-        chapter1.update()
+        chapter1.update(dt)
     end)
 end)
 
